@@ -1,0 +1,41 @@
+<div class="content">
+
+<%= render partial: "name" %>
+
+<ul class=lists>
+<% if user_signed_in? %>
+<li class="entry_button">
+    <a href="/users/<%= current_user.id %>">my page</a>
+  </li>
+  <li class="entry_button">
+    <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+  </li>
+  <li class="create_new">
+    <%=link_to "create new", new_article_path %>
+  </li>
+  
+  <% end %>
+  <li class="entry_button">
+    <%= link_to "sign in", new_user_session_path, method: :get %>
+  </li>
+
+  <li class="entry_button">
+    <%= link_to "sign up", new_user_registration_path, method: :get %>
+  </li>
+</ul>
+
+<% @articles.each do |article| %>
+  <div class="row-md-3">
+    <%= link_to article do %>
+    <%= image_tag 'photo.jpg', class: 'img-responsive img-responsive-overwrite ' %>
+  <div>
+    <p class='title'><%= article.title %></p>
+  <span>
+    <%= article.created_at.strftime("%Y年%m月%d日") %>
+  </span>
+  </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+

@@ -1,0 +1,16 @@
+  <%= render partial: "name" %>
+
+  <div class="show_content">
+  <div class="show_image margin-top5% article-block">
+      <%= image_tag 'photo.jpg', class: 'image center-block ' %>
+    <div>
+      <h1 class="show_title"><%= @article.title %></h1>
+      <p class='title'><%= @article.title %></p>
+      <p class="show_time">
+      <%= @article.created_at.strftime("%Y年%m月%d日") %>
+      </p>
+    </div>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn'%>
+    <%= link_to 'Delete', article_path(@article), method: :delete, class: 'btn'%>
+  </div>
+

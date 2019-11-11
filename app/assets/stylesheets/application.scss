@@ -1,0 +1,78 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "articles";
+@import "show";
+@import "new";
+
+
+header{
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",serif;
+  text-decoration: none;
+  outline: none;
+  
+}
+
+
+.text-right {
+  font-size: 22px;
+  letter-spacing: 0.1rem;
+  margin-bottom: 10px;
+  padding-right: 20px;
+  text-decoration: none;
+  width: 100%;
+  margin-left: auto;
+}
+
+
+h2 {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.text-right-sub {
+  color: #999;
+  vertical-align: middle;
+}
+
+.lists {
+  font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","ＭＳ Ｐ明朝","MS PMincho",serif;
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+ list-style: none;
+
+  position: fixed;
+  bottom: 80px;
+  left: 40px;
+  font-size: 110%;
+  line-height: 200%;
+}
+
+.row-md-3{
+  text-align: center;
+  margin-top: 50px;
+  overflow: scroll;
+
+}
+
+
+
+.img-responsive-overwrite{
+  display: block;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 50px;
+
+}
