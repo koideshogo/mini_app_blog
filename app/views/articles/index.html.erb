@@ -1,28 +1,49 @@
 <div class="content">
 
-<%= render partial: "name" %>
 
-<ul class=lists>
-<% if user_signed_in? %>
-<li class="entry_button">
-    <a href="/users/<%= current_user.id %>">my page</a>
-  </li>
-  <li class="entry_button">
-    <%= link_to "sign out", destroy_user_session_path, method: :delete %>
-  </li>
-  <li class="create_new">
-    <%=link_to "create new", new_article_path %>
-  </li>
-  
-  <% end %>
-  <li class="entry_button">
-    <%= link_to "sign in", new_user_session_path, method: :get %>
-  </li>
 
-  <li class="entry_button">
-    <%= link_to "sign up", new_user_registration_path, method: :get %>
-  </li>
-</ul>
+  <ul class=lists>
+    <% if user_signed_in? %>
+<header>
+  <a href="articles">
+  <h1 class="text-right"><%= link_to current_user.username, root_path(current_user) %></h1>
+    <h2 class="text-right-sub">
+      <span class="text-right-sub"><%= link_to current_user.email, root_path(current_user) %></span>
+      <br>
+      <span class="text-right-sub">PHOTO BLOGER</span>
+    </h2>
+  </header>
+    </a>
+      <li class="entry_button">
+        <a href="/users/<%= current_user.id %>">my page</a>
+      </li>
+      <li class="entry_button">
+        <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+      </li>
+      <li class="create_new">
+        <%=link_to "create new", new_article_path %>
+      </li>
+
+    <% else %>
+    <header>
+    <a href="/">
+      <h1 class="text-right">歡迎光臨</h1>
+        <h2 class="text-right-sub">
+          <span class="text-right-sub">well come</span><br>
+          <span class="text-right-sub">PHOTO BLOGER</span>
+        </h2>
+    </a>
+    </header>
+
+      <li class="entry_button">
+        <%= link_to "sign in", new_user_session_path, method: :get %>
+      </li>
+      <li class="entry_button">
+        <%= link_to "sign up", new_user_registration_path, method: :get %>
+      </li>
+    <% end %>
+  </ul>
+
 
 <% @articles.each do |article| %>
   <div class="row-md-3">

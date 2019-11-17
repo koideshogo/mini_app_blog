@@ -1,5 +1,14 @@
+<header>
+<a href="/">
+<h1 class="text-right"><%= link_to current_user.username, articles_path%></h1>
+  <h2 class="text-right-sub">
+    <span class="text-right-sub"><%= link_to current_user.email, articles_path%></span>
+    <br>
+    <span class="text-right-sub">PHOTO BLOGER</span>
+  </h2>
+  </a>
 
-<%= render partial: "name" %>
+</header>
 
   <div class="show_image margin-top5% article-block">
     <h1 class="create_new"> Edit </h1>

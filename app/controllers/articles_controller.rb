@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  before_action :move_to_index, except: [:index]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -50,6 +50,10 @@ end
 
 def article_params
   params.require(:article).permit(:title, :body)
+end
+
+def move_to_index
+  redirect_to action: :index unless user_signed_in?
 end
 
 end
